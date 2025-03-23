@@ -39,10 +39,10 @@ Implemented the following key analytics:
 
 ### 3️⃣ Retrieval-Augmented Question Answering (RAG)
 - Integrated **ChromaDB** as the vector database to store data embeddings.
-- Used **Mistral-7B-Instruct** as the primary LLM for question-answering.
+- Used **Mistral-Large-Instruct-2407** as the primary LLM for question-answering.
 - Created a conversational chain to maintain chat history and provide contextual responses.
 - Example supported queries:
-  - **"Show me total revenue for July 2017."**
+  - **"Show me total revenue the hotel has generated."**
   - **"Which locations had the highest booking cancellations?"**
   - **"What is the average price of a hotel booking?"**
 
@@ -61,7 +61,7 @@ Implemented the following key analytics:
 - Evaluated Q&A accuracy by comparing LLM responses against known data points.
 - Ensured efficient embedding retrieval by optimizing the batch size for ChromaDB inserts.
 - Measured and optimized API response time to ensure faster insights delivery.
-- `Main issues that were encountered were expected; the llm cannot handle the retreival and processing of all the 100000+ records. The maximum tested number of records that can be extracted without compramising on response time is 10 (controlled by the search_kwargs k parameter in retreiver)`
+- `Main issues that were encountered were expected; the llm cannot handle the retreival and processing of all the 100000+ records. The maximum tested number of records that can be extracted without compramising on response time and tokens per request limit is 10 (controlled by the search_kwargs k parameter in retreiver)`
 
 
 ---
@@ -130,17 +130,21 @@ Implemented the following key analytics:
    pip install -r requirements.txt
    ```
 
-3. **(Optional - Just to check rate limits and if RAG works as expected ) Run the Chatbot API**
+3. **API credentials and .env setup**
+- Obtain valid api secret key from th eofficial mistral ai website and create a .env file containing the secret key loaded into an environment variable
+
+
+4.  **(Optional - Just to check rate limits and if RAG works as expected ) Run the Chatbot API**
    ```bash
    python chatbot.py
    ```
 
-4. **Run the Flask Web Application**
+5. **Run the Flask Web Application**
    ```bash
    python app.py
    ```
 
-5. **Access the Web Interface**
+6. **Access the Web Interface**
    - Visit **`http://localhost:5000`** to use the Chatbot UI.
    - Use the **"Show/Hide Analytics"** button to visualize analytics.
 
@@ -150,10 +154,9 @@ Implemented the following key analytics:
 Once the Chroma embeddings have been updated it should be able to answer the following queries withing the limits mentioned in performance evaluation.
 | **Query** | **Expected Output** |
 |:-----------|:--------------------|
-| _"Show me total revenue for July 2017."_ | `$15,320` |
-| _"Which country had the highest booking cancellations?"_ | **Portugal** |
-| _"What is the average length of stay?"_ | **3.5 days** |
-| _"Show me the distribution of lead times."_ | A histogram showing booking lead time distribution. |
+| _"Show me total revenue."_ | `$xxx` |
+| _"Which country had the highest booking cancellations?"_ | **ABC** |
+| _"What is the average length of stay?"_ | **x days** |
 
 ---
 
