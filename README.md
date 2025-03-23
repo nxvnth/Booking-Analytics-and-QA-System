@@ -1,5 +1,6 @@
 # LLM-Powered Booking Analytics & QA System
 
+![Alt text](resources/home.png?raw=true "Landing Page")
 ## 📋 Project Overview
 This project aims to develop a system that processes hotel booking data, extracts insights, and enables retrieval-augmented question answering (RAG). The system offers powerful analytics visualizations and allows users to query the data using natural language.
 
