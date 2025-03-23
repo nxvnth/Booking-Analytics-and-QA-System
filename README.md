@@ -51,8 +51,9 @@ Implemented the following key analytics:
 ### 4️⃣ API Development
 - Developed a REST API using **Flask** with the following endpoints:
 - **`POST /analytics`** → Returns visual analytics in JSON/HTML format.
-- **`POST /ask`** → Accepts natural language queries and returns insightful responses.
+- **`POST /chat`** → Accepts natural language queries and returns insightful responses.
 - **`GET /health`** → Provides a system health check for dependency verification.
+- **`GET /get_data`** → Provides both chat history and analytics data as JSON.
 
 ---
 
