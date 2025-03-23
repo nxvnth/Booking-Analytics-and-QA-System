@@ -73,10 +73,13 @@ Implemented the following key analytics:
   - Verifying LLM availability.
   - Ensuring data files are loaded correctly.
 
+---
+
 ### ❗ Pending Bonus Features
 1. **Query History Tracking** – To keep a record of user queries for reference and analysis.
 2. **PostgreSQL Live Updates** – To automatically update the analytics data when new records are added to the database.
-3. **Enhancing RAG** - To add more fields to the dataset to minimize computations so that llm can just focus on retrieval
+3. **Enhancing RAG** - To add more fields to the dataset to minimize computations so that llm can just focus on retrieval.
+4. **Fixing geo-distribution graph** - To fix the issue where the interactive geo-distribution graph doesn't appear.
 
 ---
 
