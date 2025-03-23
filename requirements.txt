@@ -1,0 +1,12 @@
+pandas
+geopands==0.8.2
+matplotlib
+seaborn
+plotly
+chromadb
+langchain
+langchain-community
+langchain-mistral-ai
+mistralai 
+tqdm
+flask
