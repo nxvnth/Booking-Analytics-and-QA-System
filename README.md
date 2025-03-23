@@ -21,7 +21,7 @@ Develop a system that:
 - Implemented data cleaning processes, including:
   - Handling missing values.
   - Correcting format inconsistencies.
-  - Added a new column `total_days_stayed` to capture the total number of nights for each booking.
+  - Added new columnS `total_days_stayed` AND `total_revenue`to capture the total number of nights for each booking.
 - Stored data in a structured CSV format.
 
 ---
@@ -60,6 +60,8 @@ Implemented the following key analytics:
 - Evaluated Q&A accuracy by comparing LLM responses against known data points.
 - Ensured efficient embedding retrieval by optimizing the batch size for ChromaDB inserts.
 - Measured and optimized API response time to ensure faster insights delivery.
+- `Main issues that were encountered were expected; the llm cannot handle the retreival and processing of all the 100000+ records. The maximum tested number of records that can be extracted without compramising on response time is 10 (controlled by the search_kwargs k parameter in retreiver)`
+
 
 ---
 
@@ -73,16 +75,18 @@ Implemented the following key analytics:
 ### ❗ Pending Bonus Features
 1. **Query History Tracking** – To keep a record of user queries for reference and analysis.
 2. **PostgreSQL Live Updates** – To automatically update the analytics data when new records are added to the database.
+3. **Enhancing RAG** - To add more fields to the dataset to minimize computations so that llm can just focus on retrieval
 
 ---
 
 ## 💻 Technology Stack
 - **Python** – Data processing, analytics, and API development.
 - **Pandas**, **NumPy** – Data cleaning and manipulation.
-- **Plotly**, **Matplotlib** – Analytics visualizations.
+- **Plotly**, **Matplotlib**,**Seaborn** – Analytics visualizations.
 - **ChromaDB** – Vector database for embeddings.
 - **Mistral-7B-Instruct** – Open-source LLM for Q&A.
 - **Flask** – API development.
+- **Basic HTML** - Frontend to visualize API results.
 - **PostgreSQL** (Planned) – For dynamic data updates.
 
 ---
@@ -122,7 +126,7 @@ Implemented the following key analytics:
    pip install -r requirements.txt
    ```
 
-3. **Run the Chatbot API**
+3. **(Optional - Just to check rate limits and if RAG works as expected ) Run the Chatbot API**
    ```bash
    python chatbot.py
    ```
@@ -139,6 +143,7 @@ Implemented the following key analytics:
 ---
 
 ## 📈 Sample Queries & Expected Results
+Once the Chroma embeddings have been updated it should be able to answer the following queries withing the limits mentioned in performance evaluation.
 | **Query** | **Expected Output** |
 |:-----------|:--------------------|
 | _"Show me total revenue for July 2017."_ | `$15,320` |
@@ -151,12 +156,7 @@ Implemented the following key analytics:
 ## 🔍 Future Improvements
 - Implement **Query History Tracking** to maintain chat history records.
 - Develop **PostgreSQL Live Updates** to dynamically update analytics.
-
----
-
-## 👨‍💻 Authors
-- **[Your Name]** – Developer and Data Scientist  
-- **Mentor/Supervisor (if required)** – [Mentor Name]
+- Enhancing RAG and Dataset manipulation
 
 ---
 
