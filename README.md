@@ -75,7 +75,7 @@ Implemented the following key analytics:
 
 ---
 
-### ❗ Pending Bonus Features
+### ❗ Pending Features
 1. **Query History Tracking** – To keep a record of user queries for reference and analysis.
 2. **PostgreSQL Live Updates** – To automatically update the analytics data when new records are added to the database.
 3. **Enhancing RAG** - To add more fields to the dataset to minimize computations so that llm can just focus on retrieval.
@@ -131,8 +131,7 @@ Implemented the following key analytics:
    ```
 
 3. **API credentials and .env setup**
-- Obtain valid api secret key from th eofficial mistral ai website and create a .env file containing the secret key loaded into an environment variable
-
+- Obtain valid api secret key from the official mistral ai website and create a .env file containing the secret key.
 
 4.  **(Optional - Just to check rate limits and if RAG works as expected ) Run the Chatbot API**
    ```bash
